@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 public class Day11 : DayBase {
 
-    protected override string PartOne() {
+    protected override string PartOne(List<string> data) {
         return "";
     }
 
-    protected override string PartTwo() {
+    protected override string PartTwo(List<string> data) {
         return "";
     }
 

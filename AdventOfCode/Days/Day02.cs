@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 public class Day02 : DayBase {
 
-    protected override string PartOne() {
-        var instructions = GetData().Select(s => new Instruction(s)).ToList();
+    protected override string PartOne(List<string> data) {
+        var instructions = data.Select(s => new Instruction(s)).ToList();
         var horizontal = 0;
         var vertical = 0;
         foreach (var i in instructions) {
@@ -20,8 +18,8 @@ public class Day02 : DayBase {
         return (Math.Abs(horizontal * vertical)).ToString();
     }
 
-    protected override string PartTwo() {
-        var instructions = GetData().Select(s => new Instruction(s)).ToList();
+    protected override string PartTwo(List<string> data) {
+        var instructions = data.Select(s => new Instruction(s)).ToList();
         var horizontal = 0;
         var depth = 0;
         var aim = 0;

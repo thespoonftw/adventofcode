@@ -8,17 +8,22 @@ public abstract class DayBase {
 
     public DayBase() {
         var name = GetType().Name;
-        Console.WriteLine(name + " Part One: " + PartOne());
-        Console.WriteLine(name + " Part Two: " + PartTwo());
-        Console.WriteLine(name + " Test: " + Test());
+        Console.WriteLine(name + " Test One: " + PartOne(GetTestData()));
+        Console.WriteLine(name + " Part One: " + PartOne(GetData()));
+        Console.WriteLine(name + " Test Two: " + PartTwo(GetTestData()));
+        Console.WriteLine(name + " Part Two: " + PartTwo(GetData()));
+        
     }
 
-    protected List<string> GetData() {
-        return System.IO.File.ReadAllLines(@"C:\Users\mikew\Desktop\AdventOfCode\AdventOfCode\AdventOfCode\Inputs\" + GetType().Name + ".txt").ToList();
+    private List<string> GetData() {
+        return System.IO.File.ReadAllLines(@"C:\Users\mikew\Desktop\AdventOfCode\AdventOfCode\Inputs\" + GetType().Name + ".txt").ToList();
     }
 
-    protected abstract string PartOne();
-    protected abstract string PartTwo();
-    protected virtual string Test() { return ""; }
+    private List<string> GetTestData() {
+        return System.IO.File.ReadAllLines(@"C:\Users\mikew\Desktop\AdventOfCode\AdventOfCode\TestData\" + GetType().Name + ".txt").ToList();
+    }
+
+    protected abstract string PartOne(List<string> data);
+    protected abstract string PartTwo(List<string> data);
 }
  
