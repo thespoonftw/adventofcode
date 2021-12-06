@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Day03 : DayBase {
 
-    protected override string PartOne(List<string> data) {
+    protected override long PartOne(List<string> data) {
         var gammaString = "";
         var epsilonString = "";
         var binaryLength = data[0].Length;
@@ -14,15 +14,15 @@ public class Day03 : DayBase {
         }
         var gamma = Convert.ToInt32(gammaString, 2);
         var epsilon = Convert.ToInt32(epsilonString, 2);
-        return (gamma * epsilon).ToString();
+        return (gamma * epsilon);
     }
 
-    protected override string PartTwo(List<string> data) {
+    protected override long PartTwo(List<string> data) {
         var oxygenString = GetOxygen(0, data);
         var co2String = GetCO2(0, data);
         var oxygen = Convert.ToInt32(oxygenString, 2);
         var co2 = Convert.ToInt32(co2String, 2);
-        return (oxygen * co2).ToString();
+        return (oxygen * co2);
     }
 
     public string GetOxygen(int currentIndex, List<string> input) {

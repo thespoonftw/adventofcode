@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Day04 : DayBase {
 
-    protected override string PartOne(List<string> data) {
+    protected override long PartOne(List<string> data) {
         var system = new BingoSystem(data);
         List<BingoBoard> victoriousBoard = null;
         int lastCalled = 0;
@@ -13,10 +13,10 @@ public class Day04 : DayBase {
             victoriousBoard = system.CallNumber(n);
             if (victoriousBoard.Count > 0) { break; }
         }
-        return (victoriousBoard[0].SumOfUnmarked() * lastCalled).ToString();
+        return victoriousBoard[0].SumOfUnmarked() * lastCalled;
     }
 
-    protected override string PartTwo(List<string> data) {
+    protected override long PartTwo(List<string> data) {
         var system = new BingoSystem(data);
         int lastCalled = 0;
         BingoBoard finalBoard = null;
@@ -27,7 +27,7 @@ public class Day04 : DayBase {
             if (system.boards.Count == 0) { finalBoard = victoriousBoards[0]; break; }
         }
         var x = finalBoard.SumOfUnmarked();
-        return (finalBoard.SumOfUnmarked() * lastCalled).ToString();
+        return finalBoard.SumOfUnmarked() * lastCalled;
     }
 
     class BingoSystem {

@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Day02 : DayBase {
 
-    protected override string PartOne(List<string> data) {
+    protected override long PartOne(List<string> data) {
         var instructions = data.Select(s => new Instruction(s)).ToList();
         var horizontal = 0;
         var vertical = 0;
@@ -15,10 +15,10 @@ public class Day02 : DayBase {
                 case InstructionType.forward: horizontal += i.value; break;
             }
         }
-        return (Math.Abs(horizontal * vertical)).ToString();
+        return (Math.Abs(horizontal * vertical));
     }
 
-    protected override string PartTwo(List<string> data) {
+    protected override long PartTwo(List<string> data) {
         var instructions = data.Select(s => new Instruction(s)).ToList();
         var horizontal = 0;
         var depth = 0;
@@ -30,7 +30,7 @@ public class Day02 : DayBase {
                 case InstructionType.forward: horizontal += i.value; depth += aim * i.value; break;
             }
         }
-        return (horizontal * depth).ToString();
+        return (horizontal * depth);
     }
 
     enum InstructionType {

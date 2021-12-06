@@ -4,12 +4,12 @@ using System.Linq;
 
 public class Day24 : DayBase {
 
-    protected override string PartOne(List<string> data) {
-        return "";
+    protected override long PartOne(List<string> data) {
+        return 0;
     }
 
-    protected override string PartTwo(List<string> data) {
-        return "";
+    protected override long PartTwo(List<string> data) {
+        return 0;
     }
 
 }

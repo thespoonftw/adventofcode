@@ -4,17 +4,17 @@ using System.Linq;
 
 public class Day05 : DayBase {
 
-    protected override string PartOne(List<string> data) {
+    protected override long PartOne(List<string> data) {
         var vents = data.Select(line => new HydrothermalVent(line)).ToList();
         var straightVents = vents.Where(v => !v.isDiagonal).ToList();
         var ventMap = new VentMap(straightVents);
-        return ventMap.EvaluateMap().ToString();
+        return ventMap.EvaluateMap();
     }
 
-    protected override string PartTwo(List<string> data) {
+    protected override long PartTwo(List<string> data) {
         var vents = data.Select(line => new HydrothermalVent(line)).ToList();
         var ventMap = new VentMap(vents);
-        return ventMap.EvaluateMap().ToString();
+        return ventMap.EvaluateMap();
     }
 
     class HydrothermalVent {

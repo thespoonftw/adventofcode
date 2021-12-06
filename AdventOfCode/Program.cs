@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 class Program {
     static void Main(string[] args) {
@@ -6,8 +7,8 @@ class Program {
         //new Day02();
         //new Day03();
         //new Day04();
-        new Day05();
-        //new Day06();
+        //new Day05();
+        new Day06();
         //new Day07();
         //new Day08();
         //new Day09();
