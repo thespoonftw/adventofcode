@@ -12,9 +12,9 @@ class Program {
         //new Day07();
         //new Day08();
         //new Day09();
-        new Day10();
+        //new Day10();
         //new Day11();
-        //new Day12();
+        new Day12();
         //new Day13();
         //new Day14();
         //new Day15();
