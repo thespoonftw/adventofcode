@@ -18,8 +18,8 @@ class Program {
         //new Day13();
         //new Day14();
         //new Day15();
-        new Day16();
-        //new Day17();
+        //new Day16();
+        new Day17();
         //new Day18();
         //new Day19();
         //new Day20();
