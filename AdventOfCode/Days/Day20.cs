@@ -34,6 +34,17 @@ public class Day20 : DayBase {
         array = biggerArray;
     }
 
+    public void DecreaseArraySize() {
+        int newWidth = array.GetLength(0) - 2;
+        var smallerArray = new bool[newWidth, newWidth];
+        for (int x = 0; x < newWidth; x++) {
+            for (int y = 0; y < newWidth; y++) {
+                smallerArray[x, y] = array[x + 1, y + 1];
+            }
+        }
+        array = smallerArray;
+    }
+
     public void Enhance() {
         int width = array.GetLength(0);
         var enhancedArray = new bool[width, width];
@@ -85,21 +96,33 @@ public class Day20 : DayBase {
 
     protected override long PartOne(List<string> data) {
         LoadData(data);
-        PrintArray();
+        IncreaseArraySize();
+        IncreaseArraySize();
         IncreaseArraySize();
         IncreaseArraySize();
         Enhance();
-        PrintArray();
-        IncreaseArraySize();
+        DecreaseArraySize();     
         Enhance();
-        PrintArray();
+        DecreaseArraySize();
         return CountLights();
     }
 
     // 5362 incorrect
 
     protected override long PartTwo(List<string> data) {
-        return 0;
+        LoadData(data);
+        for (int i = 0; i<25; i++) {
+            IncreaseArraySize();
+            IncreaseArraySize();
+            IncreaseArraySize();
+            IncreaseArraySize();
+            Enhance();
+            DecreaseArraySize();
+            Enhance();
+            DecreaseArraySize();
+        }
+        PrintArray();
+        return CountLights();
     }
 
 }
